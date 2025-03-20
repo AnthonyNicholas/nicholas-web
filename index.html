@@ -1,28 +1,74 @@
 <meta http-equiv="refresh" content="10">
 
-<style> 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Prevents scrolling */
-}
-/* Make iframe take full page */
-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    transform: scale(2); /* Increase size by 40% */
-    transform-origin: top left;
-    border: none;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule View - Google Calendar</title>
 
-<html>
-    <body>
-        <iframe src="https://calendar.google.com/calendar/embed?src=b6417d61b0f8e1aa0428a766c26886b6af0329110ceb263b42740bcac31d1164%40group.calendar.google.com&mode=AGENDA&ctz=Australia%2FSydney" style="border: 0" frameborder="0" scrolling="no"></iframe>       
-    </body>
+    <style> 
+        /* Ensure full page usage */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000; /* Dark background for high contrast */
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Enlarged iframe for better readability */
+        .calendar-container {
+            width: 100vw;
+            height: 90vh; /* Leave space for controls */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 90vw; /* Slight padding to avoid cut-off */
+            height: 90vh;
+            border: none;
+        }
+
+        /* High contrast navigation buttons */
+        .controls {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button {
+            font-size: 24px; /* Large text */
+            padding: 15px 30px;
+            background-color: #007AFF; /* High contrast blue */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #005ecb;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Calendar Container -->
+    <div class="calendar-container">
+        <iframe src="https://calendar.google.com/calendar/embed?src=b6417d61b0f8e1aa0428a766c26886b6af0329110ceb263b42740bcac31d1164%40group.calendar.google.com&mode=AGENDA&ctz=Australia%2FSydney">
+        </iframe>
+    </div>
+
+</body>
 </html>
